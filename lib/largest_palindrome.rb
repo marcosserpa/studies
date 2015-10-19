@@ -19,34 +19,34 @@ class LargestPalindrome
 
 
     private
-      def palindrome?(number)
-        if number.to_s == reverse(number)
-          true
-        else
-          false
-        end
+    def palindrome?(number)
+      if number.to_s == reverse(number)
+        true
+      else
+        false
       end
+    end
 
-      def reverse(number)
-        number.to_s.reverse.rjust(number.to_s.length)
-      end
+    def reverse(number)
+      number.to_s.reverse.rjust(number.to_s.length)
+    end
 
-      def find_palindrome(greater_number)
-        greater_number_copy = greater_number
-        palindromes = []
+    def find_palindrome(greater_number)
+      greater_number_copy = greater_number
+      palindromes = []
 
-        greater_number.step(100, -1) do |factor_1|
-          greater_number.step(100, -1) do |factor_2|
-            product = factor_1 * factor_2
+      greater_number.step(100, -1) do |factor_1|
+        greater_number.step(100, -1) do |factor_2|
+          product = factor_1 * factor_2
 
-            unless not palindrome?(product)
-              palindromes << product.to_i
-            end
+          unless not palindrome?(product)
+            palindromes << product.to_i
           end
         end
-
-        palindromes.max
       end
+
+      palindromes.max
+    end
 
   end
 

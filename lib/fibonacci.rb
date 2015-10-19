@@ -28,16 +28,17 @@ class Fibonacci
     end
 
     private
-      def make_sequence(limit)
+    def make_sequence(limit)
+      sum = @@sequence.last + @@sequence.reverse[1]
+
+      while(sum < limit)
+        @@sequence << sum 
         sum = @@sequence.last + @@sequence.reverse[1]
-
-        while(sum < limit)
-          @@sequence << sum 
-          sum = @@sequence.last + @@sequence.reverse[1]
-        end
-
-        @@sequence
       end
+
+      @@sequence
+    end
+  
   end
 
 end
