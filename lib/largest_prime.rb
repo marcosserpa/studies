@@ -18,6 +18,7 @@ class LargestPrime
 
 
     private
+
     def prime_factors(number)
       factors = []
       factor = 3
